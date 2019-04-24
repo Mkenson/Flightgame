@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5109,7 +5109,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349329938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1522865511}
@@ -5132,8 +5132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b297a60c0ddf0ee4dabefaf158fb097d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRollAngle: 80
-  maxPitchAngle: 80
+  maxRollAngle: 100
+  maxPitchAngle: 100
 --- !u!114 &349329941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5157,7 +5157,7 @@ MonoBehaviour:
   m_AutoRollLevel: 0.2
   m_AutoPitchLevel: 0.5
   m_AirBrakesEffect: 3
-  m_ThrottleChangeSpeed: 0.3
+  m_ThrottleChangeSpeed: 0.1
   m_DragIncreaseFactor: 0.001
 --- !u!54 &349329942
 Rigidbody:
@@ -14569,8 +14569,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 471898355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: -0.5, z: -1.6}
-  m_LocalScale: {x: 3, y: 0.3, z: 2}
+  m_LocalPosition: {x: 2.8, y: -0.78, z: -1.6}
+  m_LocalScale: {x: 3.5, y: 0.6, z: 2}
   m_Children: []
   m_Father: {fileID: 930143949}
   m_RootOrder: 1
@@ -14596,6 +14596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507145514}
   - component: {fileID: 507145515}
+  - component: {fileID: 507145516}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
@@ -14610,7 +14611,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 507145513}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.7, z: 0.5}
+  m_LocalPosition: {x: 0, y: -0.64, z: 1.6}
   m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 930143949}
@@ -14624,10 +14625,22 @@ CapsuleCollider:
   m_GameObject: {fileID: 507145513}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.7
   m_Height: 8.86
   m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &507145516
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 507145513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 7, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &580391574
 GameObject:
@@ -19652,8 +19665,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709330894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -0.5, z: -1.6}
-  m_LocalScale: {x: 3, y: 0.29999998, z: 2}
+  m_LocalPosition: {x: -2.8, y: -0.78, z: -1.6}
+  m_LocalScale: {x: 3.5, y: 0.6, z: 2}
   m_Children: []
   m_Father: {fileID: 930143949}
   m_RootOrder: 2
@@ -24977,9 +24990,9 @@ MonoBehaviour:
   m_AutoTargetPlayer: 1
   m_UpdateType: 0
   m_MoveSpeed: 8
-  m_TurnSpeed: 1
-  m_RollSpeed: 0.2
-  m_FollowVelocity: 0
+  m_TurnSpeed: 2
+  m_RollSpeed: 0.5
+  m_FollowVelocity: 1
   m_FollowTilt: 1
   m_SpinTurnLimit: 90
   m_TargetVelocityLowerLimit: 4

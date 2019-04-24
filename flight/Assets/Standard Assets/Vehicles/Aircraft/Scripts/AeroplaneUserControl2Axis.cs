@@ -27,7 +27,8 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             // Read input for the pitch, yaw, roll and throttle of the aeroplane.
             float roll = CrossPlatformInputManager.GetAxis("Horizontal");
             float pitch = CrossPlatformInputManager.GetAxis("Vertical");
-            float yaw = CrossPlatformInputManager.GetAxis("YawS");
+            float yaw1 = CrossPlatformInputManager.GetAxis("YawS1");
+            float yaw2 = CrossPlatformInputManager.GetAxis("YawS2");
             //bool airBrakes = CrossPlatformInputManager.GetButton("Fire1");
             bool airEngines =CrossPlatformInputManager.GetButton("RightB");
             bool airBrakes =CrossPlatformInputManager.GetButton("LeftB");
@@ -38,15 +39,37 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             {
                 throttle=1;
             }
-            if(airBrakes==true)
+            if (airBrakes == true)
             {
-                throttle=-1;
+                throttle = -1;
             }
+
 #if MOBILE_INPUT
             AdjustInputForMobileControls(ref roll, ref pitch, ref throttle);
 #endif
             // Pass the input to the aeroplane
-            m_Aeroplane.Move(roll, pitch, -yaw, throttle, airBrakes);
+            //åªèÛPS4ÉRÉìÉgÉçÅ[ÉâÇ…ÇÃÇ›ëŒâû!
+            if (yaw1 < 0 && yaw2 < 0)
+            {
+               m_Aeroplane.Move(roll, pitch, 0, throttle, airBrakes);
+               Debug.Log("Neutral1");
+            }
+            if(yaw1>=0 && yaw2 <0)
+            {
+                m_Aeroplane.Move(roll, pitch, -yaw1, throttle, airBrakes);
+                Debug.Log("Left");
+            }
+            if (yaw2 >= 0 && yaw1 < 0)
+            {
+                m_Aeroplane.Move(roll, pitch, yaw2, throttle, airBrakes);
+                Debug.Log("Right");
+            }
+            if(yaw1 >= 0 && yaw2 >= 0)
+            {
+                m_Aeroplane.Move(roll, pitch, 0, throttle, airBrakes);
+                Debug.Log("Neutral2");
+            }
+
 
         }
 
